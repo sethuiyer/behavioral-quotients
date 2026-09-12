@@ -3,7 +3,7 @@
 //
 // Both sides of every comparison come from a real parser, never a regex:
 //
-//   markdown side   Pandoc's own JSON AST of ../behavioral_quotients.md
+//   markdown side   Pandoc's own JSON AST of behavioral_quotients.md
 //   HTML side       parse5 parsing the built index.html
 //
 // Those are the *same two parsers* the build itself uses (Pandoc reads the
@@ -18,7 +18,7 @@
 //
 //   node verify.mjs            # human-readable summary, exit 0/1
 //
-// No network access. Reads only ../behavioral_quotients.md and ./index.html.
+// No network access. Reads only behavioral_quotients.md and ./index.html.
 
 import fs from 'node:fs';
 import path from 'node:path';

@@ -59,7 +59,7 @@ only JavaScript dependencies are build- and verify-time.
 ## Pipeline
 
 ```
-../behavioral_quotients.md
+behavioral_quotients.md
    │
    ├─ pandoc -f markdown+tex_math_dollars+pipe_tables+smart -t json
    │     └─ Pandoc's own AST ──────────────► INVENTORY.json      (measured ground truth)
@@ -121,7 +121,7 @@ hand-rolled markdown regex anywhere in the pipeline.
 ## The verifier
 
 Run `node verify.mjs`. Each test compares the Pandoc AST of
-`../behavioral_quotients.md` against parse5's parse of the built `index.html`, and
+`behavioral_quotients.md` against parse5's parse of the built `index.html`, and
 writes what it saw to `verify-report.json`.
 
 | # | Test | What it proves | Observed |

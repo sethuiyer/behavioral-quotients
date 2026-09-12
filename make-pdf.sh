@@ -3,7 +3,9 @@
 # Uses Tectonic, which fetches LaTeX packages on first run (cached afterwards).
 set -euo pipefail
 cd "$(dirname "$0")"
-pandoc ../behavioral_quotients.md -o paper.pdf \
+SRC=behavioral_quotients.md
+[ -f "$SRC" ] || SRC=../behavioral_quotients.md
+pandoc "$SRC" -o paper.pdf \
   --pdf-engine=tectonic \
   -V geometry:margin=1in \
   -V mainfont="DejaVu Serif" \

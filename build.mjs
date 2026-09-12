@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Deterministic, offline build: ../behavioral_quotients.md -> index.html
+// Deterministic, offline build: behavioral_quotients.md -> index.html
 //
 // Pipeline
 //   1. Pandoc reads the paper and emits an HTML5 fragment (--mathjax, so TeX is

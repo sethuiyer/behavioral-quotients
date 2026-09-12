@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Deterministic, offline build: ../behavioral_quotients.md -> index.html
+# Deterministic, offline build: behavioral_quotients.md -> index.html
 #
 # The build never touches the network: Pandoc and Node do the work, and MathJax
 # is vendored under vendor/mathjax/. Node dependencies must already be present
@@ -21,7 +21,8 @@ die() { printf 'build.sh: %s\n' "$1" >&2; exit 1; }
 command -v node   >/dev/null 2>&1 || die "node is not installed"
 command -v pandoc >/dev/null 2>&1 || die "pandoc is not installed"
 
-[ -f ../behavioral_quotients.md ]                 || die "../behavioral_quotients.md is missing (the single source of truth)"
+[ -f behavioral_quotients.md ] || [ -f ../behavioral_quotients.md ] \
+  || die "behavioral_quotients.md is missing (looked in ./ and ../)"
 [ -d node_modules ]                               || die "node_modules is missing; run 'npm ci' once, then re-run (the build itself stays offline)"
 [ -f vendor/mathjax/tex-chtml-full.js ]           || die "vendored MathJax is missing at vendor/mathjax/tex-chtml-full.js"
 [ -f assets/distill.css ]                         || die "assets/distill.css is missing"
