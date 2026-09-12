@@ -51,6 +51,12 @@ const SITE = {
   ],
   tracker: { src: 'https://beampipe.io/js/tracker.js', domain: 'sethuiyer.github.io' },
   pdf: 'paper.pdf',
+  audio: {
+    file: 'assets/audio_lecture.mp3',
+    label: 'Listen to the lecture',
+    duration: 'PT7M50S',
+    durationLabel: '7:50',
+  },
 };
 const absUrl = (p) => new URL(p, SITE.url).href;
 
@@ -370,6 +376,13 @@ const jsonLd = JSON.stringify({
   license: SITE.license,
   isAccessibleForFree: true,
   encoding: { '@type': 'MediaObject', contentUrl: absUrl(SITE.pdf), encodingFormat: 'application/pdf' },
+  audio: {
+    '@type': 'AudioObject',
+    name: SITE.audio.label,
+    contentUrl: absUrl(SITE.audio.file),
+    encodingFormat: 'audio/mpeg',
+    duration: SITE.audio.duration,
+  },
 }).replace(/</g, '\\u003c');
 
 const page = renderPage({
@@ -502,6 +515,8 @@ function renderPage(o) {
 <meta property="og:locale" content="en">
 <meta property="article:author" content="${escapeAttr(SITE.author)}">
 <meta property="article:published_time" content="${SITE.date}">
+<meta property="og:audio" content="${absUrl(SITE.audio.file)}">
+<meta property="og:audio:type" content="audio/mpeg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="${escapeAttr(o.titleText)}">
 <meta name="twitter:description" content="${escapeAttr(o.description)}">
@@ -551,6 +566,14 @@ ${o.tocHtml}
 </button>
 </div>
 </header>
+<div class="d-audio" id="d-audio">
+<span class="d-audio-label">${escapeHtml(SITE.audio.label)}</span>
+<span class="d-audio-meta">${SITE.audio.durationLabel} · MP3</span>
+<audio class="d-audio-player" controls preload="metadata" src="${SITE.audio.file}">
+<a href="${SITE.audio.file}">Download the lecture (MP3, ${SITE.audio.durationLabel})</a>
+</audio>
+<a class="d-audio-download" href="${SITE.audio.file}" download>Download</a>
+</div>
 <article class="d-article" id="d-article">
 ${o.articleHtml}
 </article>

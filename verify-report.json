@@ -2,7 +2,7 @@
   "failed": 0,
   "generated_by": "verify.mjs",
   "index": "index.html",
-  "passed": 12,
+  "passed": 13,
   "source": "behavioral_quotients.md",
   "tests": [
     {
@@ -179,14 +179,24 @@
       "status": "pass"
     },
     {
-      "detail": "644 internal links resolve across 433 unique ids",
+      "detail": "644 internal links resolve across 434 unique ids",
       "id": "T11",
       "name": "anchors resolve",
       "observed": {
         "dangling": 0,
         "duplicates": 0,
-        "ids": 433,
+        "ids": 434,
         "internal_links": 644
+      },
+      "status": "pass"
+    },
+    {
+      "detail": "7 local subresource(s) present on disk (incl. lecture audio)",
+      "id": "T12",
+      "name": "local assets exist",
+      "observed": {
+        "checked": 7,
+        "missing": 0
       },
       "status": "pass"
     }
