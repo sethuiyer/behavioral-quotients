@@ -1,0 +1,194 @@
+{
+  "failed": 0,
+  "generated_by": "verify.mjs",
+  "index": "index.html",
+  "passed": 12,
+  "source": "behavioral_quotients.md",
+  "tests": [
+    {
+      "detail": "40 headings, level and text identical in order",
+      "id": "T1",
+      "name": "headings",
+      "observed": {
+        "html": 40,
+        "markdown": 40
+      },
+      "status": "pass"
+    },
+    {
+      "detail": "28 display equations, TeX identical in document order",
+      "id": "T2",
+      "name": "display math",
+      "observed": {
+        "html": 28,
+        "markdown": 28
+      },
+      "status": "pass"
+    },
+    {
+      "detail": "470 inline equations, TeX identical in document order",
+      "id": "T3",
+      "name": "inline math",
+      "observed": {
+        "html": 470,
+        "markdown": 470
+      },
+      "status": "pass"
+    },
+    {
+      "detail": "page math (500) = article (498) + TOC (2); TOC copies are already in the article",
+      "id": "T2b",
+      "name": "math containment (TOC ⊆ article)",
+      "observed": {
+        "article": 498,
+        "page": 500,
+        "toc": 2
+      },
+      "status": "pass"
+    },
+    {
+      "detail": "341 citation tokens identical in order",
+      "id": "T4",
+      "name": "citations",
+      "observed": {
+        "distinct": 223,
+        "html": 341,
+        "markdown": 341
+      },
+      "status": "pass"
+    },
+    {
+      "detail": "9 tables, 335 cells, per-table cell multisets identical",
+      "id": "T5",
+      "name": "tables",
+      "observed": {
+        "cells": [
+          {
+            "html": 52,
+            "markdown": 52,
+            "table": 1
+          },
+          {
+            "html": 18,
+            "markdown": 18,
+            "table": 2
+          },
+          {
+            "html": 12,
+            "markdown": 12,
+            "table": 3
+          },
+          {
+            "html": 28,
+            "markdown": 28,
+            "table": 4
+          },
+          {
+            "html": 18,
+            "markdown": 18,
+            "table": 5
+          },
+          {
+            "html": 24,
+            "markdown": 24,
+            "table": 6
+          },
+          {
+            "html": 45,
+            "markdown": 45,
+            "table": 7
+          },
+          {
+            "html": 46,
+            "markdown": 46,
+            "table": 8
+          },
+          {
+            "html": 92,
+            "markdown": 92,
+            "table": 9
+          }
+        ],
+        "html": 9,
+        "markdown": 9
+      },
+      "status": "pass"
+    },
+    {
+      "detail": "1 code block(s), language and body byte-identical",
+      "id": "T6",
+      "name": "code blocks",
+      "observed": {
+        "block_1": {
+          "bytes": 294,
+          "language": "(none)"
+        },
+        "html": 1,
+        "markdown": 1
+      },
+      "status": "pass"
+    },
+    {
+      "detail": "194 references, ids ref-1..ref-194 in order, every one cited and backlinked",
+      "id": "T7",
+      "name": "references",
+      "observed": {
+        "cite_markers": 194,
+        "html": 194,
+        "markdown": 194
+      },
+      "status": "pass"
+    },
+    {
+      "detail": "41 sections, 86405 normalized chars, byte-identical",
+      "id": "T8",
+      "name": "section text",
+      "observed": {
+        "html": 41,
+        "markdown": 41,
+        "mismatches": []
+      },
+      "status": "pass"
+    },
+    {
+      "detail": "500 equations typeset with 0 errors (498 article, 2 TOC)",
+      "id": "T9",
+      "name": "math typesetting",
+      "observed": {
+        "display": 28,
+        "equations": 500,
+        "errors": 0,
+        "in_article": 498,
+        "in_toc": 2,
+        "inline": 472,
+        "typeset_ok": 500
+      },
+      "status": "pass"
+    },
+    {
+      "detail": "no TeX delimiters, $ signs or \\commands in prose; all math annotated; 0 unaudited remote subresources (1 audited tracker allowed)",
+      "id": "T10",
+      "name": "no source leakage",
+      "observed": {
+        "leaks": 0,
+        "remote_allowed": 1,
+        "remote_subresources": 0,
+        "sample": [],
+        "unannotated_math": 0
+      },
+      "status": "pass"
+    },
+    {
+      "detail": "644 internal links resolve across 433 unique ids",
+      "id": "T11",
+      "name": "anchors resolve",
+      "observed": {
+        "dangling": 0,
+        "duplicates": 0,
+        "ids": 433,
+        "internal_links": 644
+      },
+      "status": "pass"
+    }
+  ]
+}

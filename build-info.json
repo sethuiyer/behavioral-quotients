@@ -1,0 +1,17 @@
+{
+  "counts": {
+    "citations_rewritten": 341,
+    "display_math": 28,
+    "headings": 40,
+    "inline_math": 470,
+    "references": 194,
+    "toc_entries": 35
+  },
+  "index_sha256": "bc23e6b0554c8d2be7dcfb6a081368626d5cccf7f83f97e21d03b98e57d87fdb",
+  "mathjax": "3.2.2",
+  "pandoc": "pandoc 3.1.13",
+  "reader": "markdown+tex_math_dollars+pipe_tables+smart",
+  "source": "behavioral_quotients.md",
+  "source_sha256": "22da2ea21c0e413f77e915e69a4a5403d4e87aac0fbc4f325a20bff5cf27a8fa",
+  "warnings": []
+}
