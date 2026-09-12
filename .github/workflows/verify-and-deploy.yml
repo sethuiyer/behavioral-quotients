@@ -1,0 +1,86 @@
+name: verify-and-deploy
+
+# The 1:1 correspondence check is a deployment gate: the deploy job only runs
+# if `verify.mjs` passes on the exact commit being published.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      # Pin Pandoc: its HTML writer version affects byte-for-byte output, and the
+      # verifier re-parses the markdown with the same binary, so build and check
+      # must agree on the version.
+      - name: Install Pandoc 3.1.13
+        run: |
+          curl -fsSL -o pandoc.deb \
+            https://github.com/jgm/pandoc/releases/download/3.1.13/pandoc-3.1.13-1-amd64.deb
+          sudo dpkg -i pandoc.deb
+          pandoc --version | head -1
+
+      - name: Install node dependencies
+        run: npm ci
+
+      - name: Build (proves determinism)
+        run: ./build.sh
+
+      - name: Math typesetting check (MathJax node API)
+        run: node check-math.mjs
+
+      - name: 1:1 correspondence verifier
+        run: node verify.mjs
+
+      - name: Upload verification report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: verify-report
+          path: |
+            verify-report.json
+            math-report.json
+            INVENTORY.json
+            build-info.json
+          if-no-files-found: ignore
+
+      - name: Assemble publish directory
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: ./publish.sh
+
+      - name: Upload Pages artifact
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: verify
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,13 +1,27 @@
 # `behavioral_quotients` — Distill-style site with a mechanical 1:1 proof
 
-A static, offline, framework-free rendering of `../behavioral_quotients.md`, plus a
+[![verify-and-deploy](https://github.com/sethuiyer/behavioral-quotients/actions/workflows/verify-and-deploy.yml/badge.svg)](https://github.com/sethuiyer/behavioral-quotients/actions/workflows/verify-and-deploy.yml)
+[![live](https://img.shields.io/badge/live-sethuiyer.github.io%2Fbehavioral--quotients-7aa2f7)](https://sethuiyer.github.io/behavioral-quotients/)
+
+A static, offline, framework-free rendering of `behavioral_quotients.md`, plus a
 verifier that *proves* the page corresponds to the paper 1:1 — nothing added,
 nothing dropped, nothing reordered, nothing reworded.
 
-The page is **derived, never authored**. `../behavioral_quotients.md` is the single
+The page is **derived, never authored**. `behavioral_quotients.md` is the single
 source of truth and is never written to. Everything under `site/` except the
 hand-written assets (`lib/`, `build.mjs`, `verify.mjs`, `assets/*`, `build.sh`,
 this file) is generated.
+
+## Continuous verification
+
+`.github/workflows/verify-and-deploy.yml` runs on every push and pull request and
+is a **deployment gate**: the `deploy` job depends on `verify`, so a page whose
+1:1 correspondence has drifted is never published.
+
+Pipeline: pinned Pandoc 3.1.13 → `npm ci` → `./build.sh` (which itself proves
+determinism) → `node check-math.mjs` → `node verify.mjs` → `./publish.sh` →
+`actions/deploy-pages`. The verification reports are uploaded as a build artifact
+and `verify-report.json` is served alongside the page.
 
 ## Quick start
 
@@ -17,6 +31,7 @@ npm ci                 # once; the only step that needs the network
 ./build.sh             # builds index.html, then proves the build is deterministic
 node check-math.mjs    # 0 errors over 500 equations
 node verify.mjs        # VERIFIED
+./publish.sh           # assemble _site/ (what CI deploys)
 ```
 
 `./build.sh && node verify.mjs` is the acceptance command. `verify.mjs` exits
