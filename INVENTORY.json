@@ -541,6 +541,22 @@
     {
       "counts": {
         "bullet_lists": 0,
+        "chars": 1841,
+        "citations": 0,
+        "code_blocks": 0,
+        "display_eq": 3,
+        "inline_eq": 15,
+        "list_items": 0,
+        "ordered_lists": 0,
+        "table_rows": 0,
+        "tables": 0
+      },
+      "heading": "7.7 Resolution-depth regularisation: the observer bridge",
+      "level": 3
+    },
+    {
+      "counts": {
+        "bullet_lists": 0,
         "chars": 860,
         "citations": 9,
         "code_blocks": 0,
@@ -675,18 +691,18 @@
     "citation_tokens_with_range": 3,
     "code_blocks": 1,
     "code_fences": 2,
-    "display_math": 28,
+    "display_math": 31,
     "distinct_citation_tokens": 223,
     "distinct_tex_commands": 119,
-    "distinct_tex_tokens": 128,
-    "headings": 40,
+    "distinct_tex_tokens": 129,
+    "headings": 41,
     "headings_by_level": {
       "h1": 1,
       "h2": 17,
-      "h3": 19,
+      "h3": 20,
       "h4": 3
     },
-    "inline_math": 470,
+    "inline_math": 485,
     "ordered_lists": 10,
     "references": 194,
     "references_never_cited": [],
@@ -820,6 +836,7 @@
       "\\#",
       "\\%",
       "\\,",
+      "\\;",
       "\\Big",
       "\\Delta",
       "\\Gamma",

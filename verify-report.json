@@ -6,42 +6,42 @@
   "source": "behavioral_quotients.md",
   "tests": [
     {
-      "detail": "40 headings, level and text identical in order",
+      "detail": "41 headings, level and text identical in order",
       "id": "T1",
       "name": "headings",
       "observed": {
-        "html": 40,
-        "markdown": 40
+        "html": 41,
+        "markdown": 41
       },
       "status": "pass"
     },
     {
-      "detail": "28 display equations, TeX identical in document order",
+      "detail": "31 display equations, TeX identical in document order",
       "id": "T2",
       "name": "display math",
       "observed": {
-        "html": 28,
-        "markdown": 28
+        "html": 31,
+        "markdown": 31
       },
       "status": "pass"
     },
     {
-      "detail": "470 inline equations, TeX identical in document order",
+      "detail": "485 inline equations, TeX identical in document order",
       "id": "T3",
       "name": "inline math",
       "observed": {
-        "html": 470,
-        "markdown": 470
+        "html": 485,
+        "markdown": 485
       },
       "status": "pass"
     },
     {
-      "detail": "page math (500) = article (498) + TOC (2); TOC copies are already in the article",
+      "detail": "page math (518) = article (516) + TOC (2); TOC copies are already in the article",
       "id": "T2b",
       "name": "math containment (TOC ⊆ article)",
       "observed": {
-        "article": 498,
-        "page": 500,
+        "article": 516,
+        "page": 518,
         "toc": 2
       },
       "status": "pass"
@@ -140,28 +140,28 @@
       "status": "pass"
     },
     {
-      "detail": "41 sections, 86405 normalized chars, byte-identical",
+      "detail": "42 sections, 88253 normalized chars, byte-identical",
       "id": "T8",
       "name": "section text",
       "observed": {
-        "html": 41,
-        "markdown": 41,
+        "html": 42,
+        "markdown": 42,
         "mismatches": []
       },
       "status": "pass"
     },
     {
-      "detail": "500 equations typeset with 0 errors (498 article, 2 TOC)",
+      "detail": "518 equations typeset with 0 errors (516 article, 2 TOC)",
       "id": "T9",
       "name": "math typesetting",
       "observed": {
-        "display": 28,
-        "equations": 500,
+        "display": 31,
+        "equations": 518,
         "errors": 0,
-        "in_article": 498,
+        "in_article": 516,
         "in_toc": 2,
-        "inline": 472,
-        "typeset_ok": 500
+        "inline": 487,
+        "typeset_ok": 518
       },
       "status": "pass"
     },
@@ -179,14 +179,14 @@
       "status": "pass"
     },
     {
-      "detail": "644 internal links resolve across 434 unique ids",
+      "detail": "647 internal links resolve across 435 unique ids",
       "id": "T11",
       "name": "anchors resolve",
       "observed": {
         "dangling": 0,
         "duplicates": 0,
-        "ids": 434,
-        "internal_links": 644
+        "ids": 435,
+        "internal_links": 647
       },
       "status": "pass"
     },

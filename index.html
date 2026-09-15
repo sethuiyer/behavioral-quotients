@@ -112,6 +112,8 @@ non-greedy satisfaction (NitroSAT)</span></a></li>
 <li class="d-toc-item d-toc-l3" data-target="empirical-status-under-an-explicit-evidence-standard"><a href="#empirical-status-under-an-explicit-evidence-standard"><span class="d-toc-text">7.5
 Empirical status, under an explicit evidence standard</span></a></li>
 <li class="d-toc-item d-toc-l3" data-target="code-and-artifacts"><a href="#code-and-artifacts"><span class="d-toc-text">7.6 Code and artifacts</span></a></li>
+<li class="d-toc-item d-toc-l3" data-target="resolution-depth-regularisation-the-observer-bridge"><a href="#resolution-depth-regularisation-the-observer-bridge"><span class="d-toc-text">7.7
+Resolution-depth regularisation: the observer bridge</span></a></li>
 <li class="d-toc-item d-toc-l2" data-target="synthesis"><a href="#synthesis"><span class="d-toc-text">8. Synthesis</span></a></li>
 <li class="d-toc-item d-toc-l2" data-target="conclusion"><a href="#conclusion"><span class="d-toc-text">9. Conclusion</span></a></li>
 <li class="d-toc-item d-toc-l2" data-target="appendix-a.-provenance-map-claim-prior-art"><a href="#appendix-a.-provenance-map-claim-prior-art"><span class="d-toc-text">Appendix A.
@@ -136,9 +138,9 @@ and Commitment</h1>
 one geometric construction, externally verified implementations, and a
 research agenda</h3>
 <div class="d-byline">
-<span class="d-reading-time">57 min read</span>
+<span class="d-reading-time">58 min read</span>
 <span class="d-byline-sep" aria-hidden="true">·</span>
-<span class="d-word-count">12,441 words</span>
+<span class="d-word-count">12,740 words</span>
 <button type="button" class="d-theme-toggle" id="d-theme-toggle" aria-label="Toggle colour scheme">
 <span class="d-theme-icon" aria-hidden="true"></span>
 </button>
@@ -1351,6 +1353,46 @@ artifact</td>
 artifacts make the correctness claims <em>checkable</em> rather than
 asserted: a reader can recompute every reported counter from the
 returned witness and re-run the oracle tests.</p>
+<hr>
+<h3 id="resolution-depth-regularisation-the-observer-bridge">7.7
+Resolution-depth regularisation: the observer bridge<a aria-label="Permalink to “7.7 Resolution-depth regularisation: the observer bridge”" href="#resolution-depth-regularisation-the-observer-bridge" class="d-anchor"></a></h3>
+<p>Everything in this paper is indexed by the continuation set <span data-display="false" data-tex="\mathcal W" class="math d-math inline">$\mathcal W$</span>, and the monotone-coarsening
+property (Prop. 2.1) is stated in terms of shrinking it. When <span data-display="false" data-tex="\mathcal W" class="math d-math inline">$\mathcal W$</span> is infinite and the process
+never halts, the natural index is not elapsed time but
+<strong>resolution depth</strong>: the level <span data-display="false" data-tex="j" class="math d-math inline">$j$</span> of a refining partition tower, at which
+<span data-display="false" data-tex="\mathcal W" class="math d-math inline">$\mathcal W$</span> has been coarsened to
+its resolution-<span data-display="false" data-tex="j" class="math d-math inline">$j$</span> quotient <span data-display="false" data-tex="X_j" class="math d-math inline">$X_j$</span>.</p>
+<p>Substituting resolution depth for time in a survival-weighted
+observer gives a scalar that couples the quotient to the geometry of its
+completion. Let <span data-display="false" data-tex="c_j = |X_j|" class="math d-math inline">$c_j = |X_j|$</span> be the
+number of resolution-<span data-display="false" data-tex="j" class="math d-math inline">$j$</span> quotient
+classes and let <span data-display="false" data-tex="1-q" class="math d-math inline">$1-q$</span> be the
+observer’s survival probability per level. Define</p>
+<div class="d-equation"><span data-display="true" data-tex="O_q \;=\; \sum_{j\ge 0} c_j\,(1-q)^{j}." class="math d-math display">$$O_q \;=\; \sum_{j\ge 0} c_j\,(1-q)^{j}.$$</span></div>
+<p>This is the generating function of the quotient-class counts, so its
+singularities are fixed by their growth.</p>
+<p><em>Exponential growth.</em> If <span data-display="false" data-tex="c_j \sim b^{\,j}" class="math d-math inline">$c_j \sim b^{\,j}$</span>, then under the visual metric <span data-display="false" data-tex="d = 2^{-r}" class="math d-math inline">$d = 2^{-r}$</span> on the boundary of the
+discovery tree, <span data-display="false" data-tex="\dim(\partial T_{\mathrm{nov}}) = \log_2 b" class="math d-math inline">$\dim(\partial T_{\mathrm{nov}}) = \log_2 b$</span>, and the sum converges iff <span data-display="false" data-tex="b(1-q)<1" class="math d-math inline">$b(1-q)&lt;1$</span>. Hence</p>
+<div class="d-equation"><span data-display="true" data-tex="q_c \;=\; 1-\tfrac{1}{b} \;=\; 1-2^{-\dim(\partial T_{\mathrm{nov}})}." class="math d-math display">$$q_c \;=\; 1-\tfrac{1}{b} \;=\; 1-2^{-\dim(\partial T_{\mathrm{nov}})}.$$</span></div>
+<p>The critical survival probability of a geometric observer is fixed by
+the dimension of the boundary.</p>
+<p><em>Polynomial growth.</em> If <span data-display="false" data-tex="c_j \sim (j+1)^m" class="math d-math inline">$c_j \sim (j+1)^m$</span>, the same sum is the object of the STOP residue
+theorem,</p>
+<div class="d-equation"><span data-display="true" data-tex="\operatorname{FP}_{t\to 0}\sum_{k\ge 1} k^{m} e^{-t(k-1)} \;=\; \zeta(-m) + \frac{1}{m+1}," class="math d-math display">$$\operatorname{FP}_{t\to 0}\sum_{k\ge 1} k^{m} e^{-t(k-1)} \;=\; \zeta(-m) + \frac{1}{m+1},$$</span></div>
+<p>verified symbolically for <span data-display="false" data-tex="m = 0,\dots,6" class="math d-math inline">$m = 0,\dots,6$</span>. The zeta residue is therefore the
+<strong>sub-exponential case</strong> of resolution-depth
+regularisation; exponential growth produces a dimension pole
+instead.</p>
+<p><strong>Status.</strong> This is a bridge, not a new minimality
+theorem, and it is deliberately labelled as elementary. The ingredients
+— geometric series and radius of convergence, box-counting dimension on
+a tree boundary, Pringsheim’s theorem, and the residue identity above —
+are all standard. What is asserted is only that <em>resolution depth,
+not time, is the correct index</em> for a survival-weighted observer on
+the quotient’s completion, and the resulting critical scale. It is
+<strong>not</strong> an equivalence of categories: no functor is
+constructed here, and none is claimed. Nothing in this subsection bears
+on the transfer criterion (§5.4) or on hypotheses (A)–(C).</p>
 <hr>
 <h2 id="synthesis">8. Synthesis<a aria-label="Permalink to “8. Synthesis”" href="#synthesis" class="d-anchor"></a></h2>
 <table>

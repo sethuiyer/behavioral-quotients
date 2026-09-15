@@ -1,17 +1,17 @@
 {
   "counts": {
     "citations_rewritten": 341,
-    "display_math": 28,
-    "headings": 40,
-    "inline_math": 470,
+    "display_math": 31,
+    "headings": 41,
+    "inline_math": 485,
     "references": 194,
-    "toc_entries": 35
+    "toc_entries": 36
   },
-  "index_sha256": "fe2fd783823f70e2229bdae9af9a6fcc9a8f2dce6bd5dbdcea81dde3c0d05e97",
+  "index_sha256": "fec558ad4a82443835d980cf0911cb8d8e0123e407d5117d51692878110d8f41",
   "mathjax": "3.2.2",
   "pandoc": "pandoc 3.1.13",
   "reader": "markdown+tex_math_dollars+pipe_tables+smart",
   "source": "behavioral_quotients.md",
-  "source_sha256": "22da2ea21c0e413f77e915e69a4a5403d4e87aac0fbc4f325a20bff5cf27a8fa",
+  "source_sha256": "54f8a2bf8c27229d4928f91d04f57f77180c436f81578af1c83f33312101a546",
   "warnings": []
 }

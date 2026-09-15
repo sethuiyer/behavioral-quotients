@@ -952,6 +952,38 @@ every reported counter from the returned witness and re-run the oracle tests.
 
 ---
 
+### 7.7 Resolution-depth regularisation: the observer bridge
+
+Everything in this paper is indexed by the continuation set $\mathcal W$, and the monotone-coarsening property (Prop. 2.1) is stated in terms of shrinking it. When $\mathcal W$ is infinite and the process never halts, the natural index is not elapsed time but **resolution depth**: the level $j$ of a refining partition tower, at which $\mathcal W$ has been coarsened to its resolution-$j$ quotient $X_j$.
+
+Substituting resolution depth for time in a survival-weighted observer gives a scalar that couples the quotient to the geometry of its completion. Let $c_j = |X_j|$ be the number of resolution-$j$ quotient classes and let $1-q$ be the observer's survival probability per level. Define
+
+$$
+O_q \;=\; \sum_{j\ge 0} c_j\,(1-q)^{j}.
+$$
+
+This is the generating function of the quotient-class counts, so its singularities are fixed by their growth.
+
+*Exponential growth.* If $c_j \sim b^{\,j}$, then under the visual metric $d = 2^{-r}$ on the boundary of the discovery tree, $\dim(\partial T_{\mathrm{nov}}) = \log_2 b$, and the sum converges iff $b(1-q)<1$. Hence
+
+$$
+q_c \;=\; 1-\tfrac{1}{b} \;=\; 1-2^{-\dim(\partial T_{\mathrm{nov}})}.
+$$
+
+The critical survival probability of a geometric observer is fixed by the dimension of the boundary.
+
+*Polynomial growth.* If $c_j \sim (j+1)^m$, the same sum is the object of the STOP residue theorem,
+
+$$
+\operatorname{FP}_{t\to 0}\sum_{k\ge 1} k^{m} e^{-t(k-1)} \;=\; \zeta(-m) + \frac{1}{m+1},
+$$
+
+verified symbolically for $m = 0,\dots,6$. The zeta residue is therefore the **sub-exponential case** of resolution-depth regularisation; exponential growth produces a dimension pole instead.
+
+**Status.** This is a bridge, not a new minimality theorem, and it is deliberately labelled as elementary. The ingredients — geometric series and radius of convergence, box-counting dimension on a tree boundary, Pringsheim's theorem, and the residue identity above — are all standard. What is asserted is only that *resolution depth, not time, is the correct index* for a survival-weighted observer on the quotient's completion, and the resulting critical scale. It is **not** an equivalence of categories: no functor is constructed here, and none is claimed. Nothing in this subsection bears on the transfer criterion (§5.4) or on hypotheses (A)–(C).
+
+---
+
 ## 8. Synthesis
 
 | Layer | Category / topology | Discrete (cache, CDCL) | Continuous (relaxation, SOS) | Thermodynamic |
