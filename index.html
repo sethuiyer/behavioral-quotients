@@ -140,7 +140,7 @@ research agenda</h3>
 <div class="d-byline">
 <span class="d-reading-time">58 min read</span>
 <span class="d-byline-sep" aria-hidden="true">·</span>
-<span class="d-word-count">12,740 words</span>
+<span class="d-word-count">12,819 words</span>
 <button type="button" class="d-theme-toggle" id="d-theme-toggle" aria-label="Toggle colour scheme">
 <span class="d-theme-icon" aria-hidden="true"></span>
 </button>
@@ -1366,18 +1366,26 @@ its resolution-<span data-display="false" data-tex="j" class="math d-math inline
 observer gives a scalar that couples the quotient to the geometry of its
 completion. Let <span data-display="false" data-tex="c_j = |X_j|" class="math d-math inline">$c_j = |X_j|$</span> be the
 number of resolution-<span data-display="false" data-tex="j" class="math d-math inline">$j$</span> quotient
-classes and let <span data-display="false" data-tex="1-q" class="math d-math inline">$1-q$</span> be the
-observer’s survival probability per level. Define</p>
+classes, and let <span data-display="false" data-tex="q \in (0,1]" class="math d-math inline">$q \in (0,1]$</span> be the
+<strong>stopping probability per resolution level</strong> (so <span data-display="false" data-tex="1-q" class="math d-math inline">$1-q$</span> is the continuation probability).
+Define</p>
 <div class="d-equation"><span data-display="true" data-tex="O_q \;=\; \sum_{j\ge 0} c_j\,(1-q)^{j}." class="math d-math display">$$O_q \;=\; \sum_{j\ge 0} c_j\,(1-q)^{j}.$$</span></div>
 <p>This is the generating function of the quotient-class counts, so its
-singularities are fixed by their growth.</p>
-<p><em>Exponential growth.</em> If <span data-display="false" data-tex="c_j \sim b^{\,j}" class="math d-math inline">$c_j \sim b^{\,j}$</span>, then under the visual metric <span data-display="false" data-tex="d = 2^{-r}" class="math d-math inline">$d = 2^{-r}$</span> on the boundary of the
-discovery tree, <span data-display="false" data-tex="\dim(\partial T_{\mathrm{nov}}) = \log_2 b" class="math d-math inline">$\dim(\partial T_{\mathrm{nov}}) = \log_2 b$</span>, and the sum converges iff <span data-display="false" data-tex="b(1-q)<1" class="math d-math inline">$b(1-q)&lt;1$</span>. Hence</p>
-<div class="d-equation"><span data-display="true" data-tex="q_c \;=\; 1-\tfrac{1}{b} \;=\; 1-2^{-\dim(\partial T_{\mathrm{nov}})}." class="math d-math display">$$q_c \;=\; 1-\tfrac{1}{b} \;=\; 1-2^{-\dim(\partial T_{\mathrm{nov}})}.$$</span></div>
-<p>The critical survival probability of a geometric observer is fixed by
-the dimension of the boundary.</p>
-<p><em>Polynomial growth.</em> If <span data-display="false" data-tex="c_j \sim (j+1)^m" class="math d-math inline">$c_j \sim (j+1)^m$</span>, the same sum is the object of the STOP residue
-theorem,</p>
+singularities are fixed by their growth. By Cauchy–Hadamard its radius
+of convergence is <span data-display="false" data-tex="R = 1/\limsup_j c_j^{1/j}" class="math d-math inline">$R = 1/\limsup_j c_j^{1/j}$</span>, and since <span data-display="false" data-tex="O_q = C(1-q)" class="math d-math inline">$O_q = C(1-q)$</span> the observer converges iff <span data-display="false" data-tex="1-q < R" class="math d-math inline">$1-q &lt; R$</span>. Hence in general</p>
+<div class="d-equation"><span data-display="true" data-tex="q_c \;=\; 1-R," class="math d-math display">$$q_c \;=\; 1-R,$$</span></div>
+<p>and by Pringsheim’s theorem the singularity nearest the origin lies
+on the positive real axis at <span data-display="false" data-tex="z=R" class="math d-math inline">$z=R$</span>,
+so the STOP transition is exactly that singularity written in observer
+coordinates.</p>
+<p><em>Exponential growth.</em> If <span data-display="false" data-tex="c_j \asymp b^{\,j}" class="math d-math inline">$c_j \asymp b^{\,j}$</span>, then under the visual metric <span data-display="false" data-tex="d = 2^{-r}" class="math d-math inline">$d = 2^{-r}$</span> on the boundary of the
+discovery tree, <span data-display="false" data-tex="\dim_B(\partial T_{\mathrm{nov}}) = \log_2 b" class="math d-math inline">$\dim_B(\partial T_{\mathrm{nov}}) = \log_2 b$</span>, so <span data-display="false" data-tex="R = 2^{-\dim_B}" class="math d-math inline">$R = 2^{-\dim_B}$</span> and</p>
+<div class="d-equation"><span data-display="true" data-tex="q_c \;=\; 1-\tfrac{1}{b} \;=\; 1-2^{-\dim_B(\partial T_{\mathrm{nov}})}." class="math d-math display">$$q_c \;=\; 1-\tfrac{1}{b} \;=\; 1-2^{-\dim_B(\partial T_{\mathrm{nov}})}.$$</span></div>
+<p>Equivalently <span data-display="false" data-tex="\dim_B(\partial T_{\mathrm{nov}}) = -\log_2(1-q_c)" class="math d-math inline">$\dim_B(\partial T_{\mathrm{nov}}) = -\log_2(1-q_c)$</span>: the quotient dimension
+fixes the stopping rate above which the observer sees a finite
+value.</p>
+<p><em>Polynomial growth.</em> If <span data-display="false" data-tex="c_j \sim (j+1)^m" class="math d-math inline">$c_j \sim (j+1)^m$</span>, then <span data-display="false" data-tex="\limsup_j c_j^{1/j}=1" class="math d-math inline">$\limsup_j c_j^{1/j}=1$</span>, so <span data-display="false" data-tex="R=1" class="math d-math inline">$R=1$</span> and
+there is no interior STOP threshold: <span data-display="false" data-tex="q_c = 0" class="math d-math inline">$q_c = 0$</span>. The sum is then the object of the STOP residue theorem,</p>
 <div class="d-equation"><span data-display="true" data-tex="\operatorname{FP}_{t\to 0}\sum_{k\ge 1} k^{m} e^{-t(k-1)} \;=\; \zeta(-m) + \frac{1}{m+1}," class="math d-math display">$$\operatorname{FP}_{t\to 0}\sum_{k\ge 1} k^{m} e^{-t(k-1)} \;=\; \zeta(-m) + \frac{1}{m+1},$$</span></div>
 <p>verified symbolically for <span data-display="false" data-tex="m = 0,\dots,6" class="math d-math inline">$m = 0,\dots,6$</span>. The zeta residue is therefore the
 <strong>sub-exponential case</strong> of resolution-depth
@@ -1385,14 +1393,18 @@ regularisation; exponential growth produces a dimension pole
 instead.</p>
 <p><strong>Status.</strong> This is a bridge, not a new minimality
 theorem, and it is deliberately labelled as elementary. The ingredients
-— geometric series and radius of convergence, box-counting dimension on
-a tree boundary, Pringsheim’s theorem, and the residue identity above —
-are all standard. What is asserted is only that <em>resolution depth,
-not time, is the correct index</em> for a survival-weighted observer on
-the quotient’s completion, and the resulting critical scale. It is
-<strong>not</strong> an equivalence of categories: no functor is
-constructed here, and none is claimed. Nothing in this subsection bears
-on the transfer criterion (§5.4) or on hypotheses (A)–(C).</p>
+— Cauchy–Hadamard, box-counting dimension on a tree boundary,
+Pringsheim’s theorem, and the residue identity above — are all standard.
+What is asserted is that <em>resolution depth, not time, is a legitimate
+stopping axis</em> for the quotient’s completion; that the critical
+stopping probability is <span data-display="false" data-tex="q_c = 1-R" class="math d-math inline">$q_c = 1-R$</span>
+with <span data-display="false" data-tex="R" class="math d-math inline">$R$</span> the radius of convergence of
+the level generating function; and the geometric corollary <span data-display="false" data-tex="q_c = 1-2^{-\dim_B}" class="math d-math inline">$q_c = 1-2^{-\dim_B}$</span> under regular
+covering growth. It is <strong>not</strong> an equivalence of
+categories: no functor is constructed here, and none is claimed. Whether
+<span data-display="false" data-tex="q_c" class="math d-math inline">$q_c$</span> is independent of the chosen
+refinement tower is open. Nothing in this subsection bears on the
+transfer criterion (§5.4) or on hypotheses (A)–(C).</p>
 <hr>
 <h2 id="synthesis">8. Synthesis<a aria-label="Permalink to “8. Synthesis”" href="#synthesis" class="d-anchor"></a></h2>
 <table>

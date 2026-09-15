@@ -1,10 +1,10 @@
 {
-  "display": 31,
-  "equations": 518,
-  "equations_in_article": 516,
+  "display": 32,
+  "equations": 532,
+  "equations_in_article": 530,
   "equations_in_toc": 2,
   "errors": 0,
   "failures": [],
-  "inline": 487,
-  "typeset_ok": 518
+  "inline": 500,
+  "typeset_ok": 532
 }

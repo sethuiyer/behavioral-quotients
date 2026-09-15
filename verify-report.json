@@ -16,32 +16,32 @@
       "status": "pass"
     },
     {
-      "detail": "31 display equations, TeX identical in document order",
+      "detail": "32 display equations, TeX identical in document order",
       "id": "T2",
       "name": "display math",
       "observed": {
-        "html": 31,
-        "markdown": 31
+        "html": 32,
+        "markdown": 32
       },
       "status": "pass"
     },
     {
-      "detail": "485 inline equations, TeX identical in document order",
+      "detail": "498 inline equations, TeX identical in document order",
       "id": "T3",
       "name": "inline math",
       "observed": {
-        "html": 485,
-        "markdown": 485
+        "html": 498,
+        "markdown": 498
       },
       "status": "pass"
     },
     {
-      "detail": "page math (518) = article (516) + TOC (2); TOC copies are already in the article",
+      "detail": "page math (532) = article (530) + TOC (2); TOC copies are already in the article",
       "id": "T2b",
       "name": "math containment (TOC ⊆ article)",
       "observed": {
-        "article": 516,
-        "page": 518,
+        "article": 530,
+        "page": 532,
         "toc": 2
       },
       "status": "pass"
@@ -140,7 +140,7 @@
       "status": "pass"
     },
     {
-      "detail": "42 sections, 88253 normalized chars, byte-identical",
+      "detail": "42 sections, 88753 normalized chars, byte-identical",
       "id": "T8",
       "name": "section text",
       "observed": {
@@ -151,17 +151,17 @@
       "status": "pass"
     },
     {
-      "detail": "518 equations typeset with 0 errors (516 article, 2 TOC)",
+      "detail": "532 equations typeset with 0 errors (530 article, 2 TOC)",
       "id": "T9",
       "name": "math typesetting",
       "observed": {
-        "display": 31,
-        "equations": 518,
+        "display": 32,
+        "equations": 532,
         "errors": 0,
-        "in_article": 516,
+        "in_article": 530,
         "in_toc": 2,
-        "inline": 487,
-        "typeset_ok": 518
+        "inline": 500,
+        "typeset_ok": 532
       },
       "status": "pass"
     },
